@@ -1,0 +1,5 @@
+---
+- name: Ensure Memcached is installed on Solaris.
+  pkg5:
+    name: "{{ memcached_package }}"
+    state: "{{ memcached_package_state }}"

@@ -9,13 +9,7 @@
   when: memcached_user is not defined
 
 # Setup/install tasks.
-- name: Update apt cache.
-  apt: update_cache=yes cache_valid_time=86400
-  when: ansible_os_family == 'Debian'
-
-- name: Install Memcached.
-  package: name=memcached state=present
-  register: memcached_install
+- include_tasks: "setup-{{ ansible_os_family }}.yml"
 
 # Configure Memcached.
 - name: Copy Memcached configuration.

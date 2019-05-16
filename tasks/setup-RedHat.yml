@@ -1,0 +1,6 @@
+---
+- name: Ensure Memcached is installed on RHEL.
+  yum:
+    name: "{{ memcached_package }}"
+    state: "{{ memcached_package_state }}"
+    enablerepo: "{{ memcached_enablerepo | default(omit, true) }}"

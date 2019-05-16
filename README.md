@@ -34,6 +34,18 @@ The location of the memcached log file.
 
 Normally memcached does not log anything. Change to "-v" to enable logging or to "-vv" for debug logging.
 
+    memcached_package: memcached
+
+The packagage name of memecached. In case different OS has different package naming.
+
+    memcached_package_state: present
+    
+If you have enabled any additional repositories such as ondrej/apache2, geerlingguy.repo-epel, or geerlingguy.repo-remi, you may want an easy way to upgrade versions. You can set this to latest (combined with memcached_enablerepo on RHEL) and can directly upgrade to a different Memcached version from a different repo (instead of uninstalling and reinstalling Memcached).
+
+    memcached_enablerepo: ""
+    
+The repository to use when installing Memcached (only used on RHEL/CentOS systems). If you'd like later versions of Memcached than are available in the OS's core repositories, use a repository like REMI (which can be installed with the geerlingguy.repo-remi).
+
 ## Dependencies
 
 None.
